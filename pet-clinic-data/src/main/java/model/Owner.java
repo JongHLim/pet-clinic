@@ -1,4 +1,4 @@
-package me.jonlim.petclinic.model;
+package model;
 
 public class Owner extends Person {
 

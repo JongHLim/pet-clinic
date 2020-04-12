@@ -1,4 +1,4 @@
-package me.jonlim.petclinic.model;
+package model;
 
 import java.time.LocalDate;
 
@@ -16,11 +16,11 @@ public class Pet {
     this.petType = petType;
   }
 
-  public me.jonlim.petclinic.model.Owner getOwner() {
+  public model.Owner getOwner() {
     return Owner;
   }
 
-  public void setOwner(me.jonlim.petclinic.model.Owner owner) {
+  public void setOwner(model.Owner owner) {
     Owner = owner;
   }
 
