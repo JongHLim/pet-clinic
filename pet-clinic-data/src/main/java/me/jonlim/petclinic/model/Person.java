@@ -1,4 +1,4 @@
-package model;
+package me.jonlim.petclinic.model;
 
 public class Person {
 
