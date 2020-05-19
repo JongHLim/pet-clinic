@@ -41,12 +41,12 @@ public class Pet extends BaseEntity {
     this.petType = petType;
   }
 
-  public me.jonlim.petclinic.model.Owner getOwner() {
+  public Owner getOwner() {
     return owner;
   }
 
-  public void setOwner(me.jonlim.petclinic.model.Owner owner) {
-    owner = owner;
+  public void setOwner(Owner owner) {
+    this.owner = owner;
   }
 
   public LocalDate getBirthDate() {

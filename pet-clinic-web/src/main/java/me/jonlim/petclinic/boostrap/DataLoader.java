@@ -1,10 +1,7 @@
 package me.jonlim.petclinic.boostrap;
 
 import me.jonlim.petclinic.model.*;
-import me.jonlim.petclinic.services.OwnerService;
-import me.jonlim.petclinic.services.PetTypeService;
-import me.jonlim.petclinic.services.SpecialtyService;
-import me.jonlim.petclinic.services.VetService;
+import me.jonlim.petclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +14,16 @@ public class DataLoader implements CommandLineRunner {
   private final VetService vetService;
   private final PetTypeService petTypeService;
   private final SpecialtyService specialtyService;
+  private final VisitService visitService;
+  private final PetService petService;
 
-  public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+  public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService, PetService petService) {
     this.ownerService = ownerService;
     this.vetService = vetService;
     this.petTypeService = petTypeService;
     this.specialtyService = specialtyService;
+    this.visitService = visitService;
+    this.petService = petService;
   }
 
   @Override
@@ -85,8 +86,14 @@ public class DataLoader implements CommandLineRunner {
     faithsPet.setBirthDate(LocalDate.now());
     faithsPet.setPetType(savedCatType);
     owner2.getPets().add(faithsPet);
-
+    petService.save(faithsPet);
     ownerService.save(owner2);
+
+    Visit catVisit = new Visit();
+    catVisit.setPet(faithsPet);
+    catVisit.setDate(LocalDate.now());
+    catVisit.setDescription("Sneezy cat");
+    visitService.save(catVisit);
 
     System.out.println("Loaded Owners...");
 
