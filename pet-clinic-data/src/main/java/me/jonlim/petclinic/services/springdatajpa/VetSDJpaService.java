@@ -2,7 +2,7 @@ package me.jonlim.petclinic.services.springdatajpa;
 
 import me.jonlim.petclinic.model.Vet;
 import me.jonlim.petclinic.services.VetService;
-import me.jonlim.repositories.VetRepository;
+import me.jonlim.petclinic.repositories.VetRepository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 

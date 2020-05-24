@@ -2,7 +2,7 @@ package me.jonlim.petclinic.services.springdatajpa;
 
 import me.jonlim.petclinic.model.Visit;
 import me.jonlim.petclinic.services.VisitService;
-import me.jonlim.repositories.VisitRepository;
+import me.jonlim.petclinic.repositories.VisitRepository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 

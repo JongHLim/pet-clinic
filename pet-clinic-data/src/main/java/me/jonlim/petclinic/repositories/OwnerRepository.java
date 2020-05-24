@@ -1,4 +1,4 @@
-package me.jonlim.repositories;
+package me.jonlim.petclinic.repositories;
 
 import me.jonlim.petclinic.model.Owner;
 import org.springframework.data.repository.CrudRepository;

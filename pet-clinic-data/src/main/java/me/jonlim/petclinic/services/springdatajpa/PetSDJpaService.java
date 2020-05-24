@@ -2,7 +2,7 @@ package me.jonlim.petclinic.services.springdatajpa;
 
 import me.jonlim.petclinic.model.Pet;
 import me.jonlim.petclinic.services.PetService;
-import me.jonlim.repositories.PetRepository;
+import me.jonlim.petclinic.repositories.PetRepository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +28,7 @@ public class PetSDJpaService implements PetService {
 
   @Override
   public Pet findById(Long aLong) {
-    return petRepository.findById(aLong);
+    return petRepository.findById(aLong).orElse(null);
   }
 
   @Override
